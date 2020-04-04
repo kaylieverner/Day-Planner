@@ -15,23 +15,23 @@ var timeBlock4 = $(".input-box4");
 var timeBlock5 = $(".input-box5");
 var saveBtn = $(".saveBtn");
 
-getEvents();
+// getEvents();
 
-function getEvents() {
-    // Get stored events from localStorage
-    // Parsing the JSON string to an object
-    var lastLogs = JSON.parse(localStorage.getItem("eventLogs"));
-    console.log(lastLogs);
-    timeBlock9.val(lastLogs.log9);
-    timeBlock10.val(lastLogs.log10);
-    timeBlock11.val(lastLogs.log11);
-    timeBlock12.val(lastLogs.log12);
-    timeBlock1.val(lastLogs.log1);
-    timeBlock2.val(lastLogs.log2);
-    timeBlock3.val(lastLogs.log3);
-    timeBlock4.val(lastLogs.log4);
-    timeBlock5.val(lastLogs.log5);
-};
+// function getEvents() {
+//     // Get stored events from localStorage
+//     // Parsing the JSON string to an object
+//     var lastLogs = JSON.parse(localStorage.getItem("eventLogs"));
+//     console.log(lastLogs);
+//     timeBlock9.val(lastLogs.log9);
+//     timeBlock10.val(lastLogs.log10);
+//     timeBlock11.val(lastLogs.log11);
+//     timeBlock12.val(lastLogs.log12);
+//     timeBlock1.val(lastLogs.log1);
+//     timeBlock2.val(lastLogs.log2);
+//     timeBlock3.val(lastLogs.log3);
+//     timeBlock4.val(lastLogs.log4);
+//     timeBlock5.val(lastLogs.log5);
+// };
 
 function storeEvents() {
 
@@ -58,6 +58,24 @@ saveBtn.click(function (event) {
     storeEvents();
 });
 
+getEvents();
+
+function getEvents() {
+    // Get stored events from localStorage
+    // Parsing the JSON string to an object
+    var lastLogs = JSON.parse(localStorage.getItem("eventLogs"));
+    console.log(lastLogs);
+    timeBlock9.val(lastLogs.log9);
+    timeBlock10.val(lastLogs.log10);
+    timeBlock11.val(lastLogs.log11);
+    timeBlock12.val(lastLogs.log12);
+    timeBlock1.val(lastLogs.log1);
+    timeBlock2.val(lastLogs.log2);
+    timeBlock3.val(lastLogs.log3);
+    timeBlock4.val(lastLogs.log4);
+    timeBlock5.val(lastLogs.log5);
+};
+
 //Compare current time to color the calendar blocks accordingly 
 var currentTime = moment().format("HH");  
 console.log(typeof(currentTime));
@@ -70,8 +88,8 @@ function checkCurrentTime() {
     var timeBlockArray = [timeBlock9, timeBlock10, timeBlock11, timeBlock12, timeBlock1, timeBlock2, timeBlock3, timeBlock4, timeBlock5]; 
 
     for (i=0; i<timeValue.length; i++) {
-        console.log(currentTime);
-        console.log(timeValue[i]);
+        // console.log(currentTime);
+        // console.log(timeValue[i]);
         if (currentTime == timeValue[i]) {
             timeBlockArray[i].addClass("present");
         } else if (currentTime > timeValue[i]) {
