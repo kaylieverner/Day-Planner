@@ -58,7 +58,30 @@ saveBtn.click(function (event) {
     storeEvents();
 });
 
+//Compare current time to color the calendar blocks accordingly 
+var currentTime = moment().format("HH");  
+console.log(typeof(currentTime));
+console.log(currentTime);
 
+checkCurrentTime();
+
+function checkCurrentTime() {
+    var timeValue = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
+    var timeBlockArray = [timeBlock9, timeBlock10, timeBlock11, timeBlock12, timeBlock1, timeBlock2, timeBlock3, timeBlock4, timeBlock5]; 
+
+    for (i=0; i<timeValue.length; i++) {
+        console.log(currentTime);
+        console.log(timeValue[i]);
+        if (currentTime == timeValue[i]) {
+            timeBlockArray[i].addClass("present");
+        } else if (currentTime > timeValue[i]) {
+            timeBlockArray[i].addClass("past");
+        } else if (currentTime < timeValue[i]) {
+            timeBlockArray[i].addClass("future");
+        }
+    };
+
+};
 
 
 
@@ -69,7 +92,6 @@ saveBtn.click(function (event) {
 //compare times 
 
 
-
 // WHEN I view the timeblocks for that day
 // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
 
@@ -77,53 +99,3 @@ saveBtn.click(function (event) {
 // //use IDs to differentiate?
 // //datastructure for timeblocks and time & query against the object to find the time 
 // //array representing the time blocks. run moment time compares on the array elements and manipulate the DOM elements they represent.
-
-// WHEN I click into a timeblock
-// THEN I can enter an event
-
-// //timeblocks should be input fields of some sort
-// //
-
-// WHEN I click the save button for that timeblock
-// THEN the text for that event is saved in local storage
-
-// //we have a save button 
-// //click listener on save button 
-// //inside click listener we do logic that stores the input values into local storage 
-
-// WHEN I refresh the page
-// THEN the saved events persist
-
-// //on page load, we should access local storage to populate the timeblocks 
-
-
-
-
-
-
-
-//Compare current time to schedule to color the calendar blocks accordingly 
-// var currentTime = moment().format("H");  
-// console.log(currentTime);
-
-// var timeBlocks = {
-//     tb9: "9",
-//     tb10: "10",
-//     tb11: "11",
-//     tb12: "12",
-//     tb1: "13",
-//     tb2: "14",
-//     tb3: "15",
-//     tb4: "16",
-//     tb5: "17"
-// };
-
-// function checkCurrentTime() {
-//     if (moment().isSame(currentTime)) {
-
-//     } else if (moment().isBefore(currentTime)) {
-
-//     } else (moment().isAfter(currentTime)) {
-
-//     }
-// }; 
