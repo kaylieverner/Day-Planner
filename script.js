@@ -66,7 +66,7 @@ console.log(currentTime);
 checkCurrentTime();
 
 function checkCurrentTime() {
-    var timeValue = ["9", "10", "11", "12", "13", "14", "15", "16", "17"];
+    var timeValue = ["09", "10", "11", "12", "13", "14", "15", "16", "17"];
     var timeBlockArray = [timeBlock9, timeBlock10, timeBlock11, timeBlock12, timeBlock1, timeBlock2, timeBlock3, timeBlock4, timeBlock5]; 
 
     for (i=0; i<timeValue.length; i++) {
