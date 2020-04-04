@@ -82,20 +82,3 @@ function checkCurrentTime() {
     };
 
 };
-
-
-
-//order to build: 
-
-//build out layout for timeblocks from 9-5 -- DONE 
-//datastructure 
-//compare times 
-
-
-// WHEN I view the timeblocks for that day
-// THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-
-// //moment query for is before, is same, is after
-// //use IDs to differentiate?
-// //datastructure for timeblocks and time & query against the object to find the time 
-// //array representing the time blocks. run moment time compares on the array elements and manipulate the DOM elements they represent.
